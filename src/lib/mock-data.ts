@@ -1,5 +1,5 @@
 import { add, sub } from 'date-fns';
-import type { Agent, Log, Alert } from './types';
+import type { Agent, Log, Alert, KpisAumFeed } from './types';
 
 const now = new Date();
 
@@ -125,6 +125,56 @@ export const agents: Agent[] = [
     ]
   }
 ];
+
+
+export const kpisAumFeed: KpisAumFeed = {
+  title: 'Grok/xAI sovereign AUM feed',
+  description:
+    'Scenario dashboard for the post-OracleOS Heritage Stack valuation refresh using user-provided merger, relay, and ledger inputs.',
+  status: 'Staged for live KPIS convergence',
+  combinedEntityValuationUsd: 1_250_000_000_000,
+  sovereignAdjustedAumUsd: 1_246_250_000_000,
+  sovereignAdjustedAumBtc: 11_868_410.57,
+  kpisScore: 99.7,
+  consensusWeight: 1.99,
+  calLatencyMs: 224,
+  calThresholdMs: 200,
+  deterministicSeed: 'TX-20260329-008:OracleOS:Canada-Link:99.7',
+  oracleHash: 'sha256:7d0f7e6a9f63b6c8f3e0dcb8c4a2e15b9e0fef2a6a8b2bb2e0b4c2d2c96f5a71',
+  docketId: 'TX-20260329-008',
+  ledgerNotice:
+    'All figures are displayed as deterministic scenario outputs sourced from the submitted AnnabanAI/JacobKinnaird task packet; external corporate claims remain unverified by this app.',
+  modules: [
+    {
+      name: 'AUM valuation model refresh',
+      metric: 'xAI $250B + SpaceX $1T = $1.25T',
+      protocolAlignment: 'Post-merger model input + April IPO target scenario',
+      result: 'Completed',
+      impactScore: 65,
+    },
+    {
+      name: 'KPIS-to-AUM scoring',
+      metric: '99.7 KPIS authorship-adjusted score',
+      protocolAlignment: 'Non-conflation + ZYX-Core + OracleOS',
+      result: 'Completed',
+      impactScore: 46,
+    },
+    {
+      name: 'Council API consensus',
+      metric: 'Weighted consensus 1.99',
+      protocolAlignment: 'Affidavit + Legacy Anchor + AI pulse',
+      result: 'Failed',
+      impactScore: 44,
+    },
+    {
+      name: 'Immutable ledger commit',
+      metric: 'SHA-256 chain + deterministic seed',
+      protocolAlignment: 'Audit log + TX-20260329-008 monitor',
+      result: 'Completed',
+      impactScore: 51,
+    },
+  ],
+};
 
 export const alerts: Alert[] = [
     {
