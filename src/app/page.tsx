@@ -27,10 +27,11 @@ import {
 } from '@/components/ui/tabs';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getPlaceholderImage } from '@/lib/placeholder-images';
-import { agents, alerts, logs } from '@/lib/mock-data';
+import { agents, alerts, kpisAumFeed, logs } from '@/lib/mock-data';
 import { AgentCard } from './components/dashboard/agent-card';
 import { AlertsPanel } from './components/dashboard/alerts-panel';
 import { LogsTable } from './components/dashboard/logs-table';
+import { KpisAumFeed } from './components/dashboard/kpis-aum-feed';
 
 export default function Home() {
   const userAvatar = getPlaceholderImage('user-avatar');
@@ -47,19 +48,19 @@ export default function Home() {
         <SidebarContent>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton href="#" isActive>
+              <SidebarMenuButton isActive>
                 <LayoutDashboard />
                 Dashboard
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton href="#">
+              <SidebarMenuButton>
                 <Bell />
                 Alerts
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton href="#">
+              <SidebarMenuButton>
                 <Settings />
                 Settings
               </SidebarMenuButton>
@@ -102,6 +103,7 @@ export default function Home() {
                 <TabsList>
                     <TabsTrigger value="dashboard">Overview</TabsTrigger>
                     <TabsTrigger value="logs">Logs</TabsTrigger>
+                    <TabsTrigger value="kpis">KPIS AUM</TabsTrigger>
                 </TabsList>
             </div>
             
@@ -123,6 +125,10 @@ export default function Home() {
               </div>
             </TabsContent>
             
+            <TabsContent value="kpis">
+                <KpisAumFeed feed={kpisAumFeed} />
+            </TabsContent>
+
             <TabsContent value="logs">
                 <Card>
                     <CardHeader>
